@@ -9,14 +9,44 @@ route: /
 
 import message from '../src';
 import { Playground } from 'docz';
+import Button from 'sinoui-components/Button';
 
 <Playground>
   {() => {
     const handleClick = () => {
-       message.info('消息1');
+       message.info('消息1', 0);
     };
 
     return <button onClick={handleClick}>显示消息</button>;
+
+}}
+
+</Playground>
+
+<Playground>
+  {() => {
+    const success = () => {
+      message.success('保存表单成功');
+    };
+    
+    const error = () => {
+        message.error('提交失败');
+    };
+    
+    const warning =  () => {
+        message.warning('表单错误');
+    };
+    
+    const info =  () => {
+        message.info('信息提示');
+    }
+
+    return <div style={{display:'flex'}}>
+        <Button onClick={success}>success</Button>
+        <Button onClick={info}>info</Button>
+        <Button onClick={error}>error</Button>
+        <Button onClick={warning}>warning</Button>
+    </div>
 
 }}
 

@@ -1,5 +1,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
 import { MessageInterface } from './types';
 import MessageList from './components/MessageList';
 
@@ -25,7 +27,9 @@ function getOrCreateRootElement() {
  */
 export default function renderMessages(messages: MessageInterface[]) {
   ReactDOM.render(
-    <MessageList messages={messages} />,
+    <ThemeProvider theme={defaultTheme}>
+      <MessageList messages={messages} />
+    </ThemeProvider>,
     getOrCreateRootElement(),
   );
 }

@@ -54,6 +54,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "@babel/runtime": "^7.6.3",
+    "@sinoui/theme": "^0.3.3",
+    "react-icons": "^3.8.0",
+    "sinoui-components": "^0.2.5",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
