@@ -1,3 +1,5 @@
-import Counter from './Counter';
+import MessageManager from './MessageManager';
 
-export default Counter;
+const message = new MessageManager();
+
+export default message;

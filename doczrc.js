@@ -27,7 +27,7 @@ export default {
   typescript: true,
   files: ['**/*.mdx'],
   public: './docs/assets',
-  menu: ['首页'],
+  menu: [],
   wrapper: 'docs/Wrapper.tsx',
   indexHtml: 'docs/index.html',
   base: getBaseUrl(),
@@ -69,8 +69,8 @@ export default {
       .end();
 
     config.watchOptions({
-        ignored: ['node_modules', 'dist', '.cache', 'coverage', '.docz']
-      });
+      ignored: ['node_modules', 'dist', '.cache', 'coverage', '.docz'],
+    });
 
     return config;
   },

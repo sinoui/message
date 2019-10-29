@@ -6,3 +6,18 @@ route: /
 # 开始使用
 
 在这里写项目使用文档。
+
+import message from '../src';
+import { Playground } from 'docz';
+
+<Playground>
+  {() => {
+    const handleClick = () => {
+       message.info('消息1');
+    };
+
+    return <button onClick={handleClick}>显示消息</button>;
+
+}}
+
+</Playground>
