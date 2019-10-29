@@ -1,10 +1,21 @@
+/**
+ * 有状态的消息
+ */
 interface StatefulMessage {
+  /**
+   * 消息标识
+   */
   key: string;
+  /**
+   * 消息显示时长
+   */
   duration: number;
 }
 
 /**
  * 有状态的消息列表
+ *
+ * **消息超时则自动删除。**
  */
 class StatefulMessageArray<T extends StatefulMessage> {
   /**
@@ -12,7 +23,9 @@ class StatefulMessageArray<T extends StatefulMessage> {
    */
   public messages: T[] = [];
 
-  // 隐藏状态的时间调度器
+  /**
+   * 隐藏消息的定时器
+   */
   private hideMessageTimeoutIds: {
     [key: string]: number;
   } = {};

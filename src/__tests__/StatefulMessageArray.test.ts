@@ -142,3 +142,32 @@ it('超过最大消息数，自动隐藏之前的消息', () => {
   expect(messages.messages.length).toBe(1);
   expect(onChange).toBeCalledWith(messages.messages);
 });
+
+it('设置最大显示条数', () => {
+  const onChange = jest.fn();
+  const messages = new StatefulMessageArray(2, onChange);
+
+  messages.setMax(1);
+
+  expect(onChange).not.toBeCalled();
+
+  messages.add({
+    key: '1',
+    duration: 100,
+  });
+  messages.add({
+    key: '2',
+    duration: 100,
+  });
+  messages.add({
+    key: '3',
+    duration: 100,
+  });
+
+  expect(onChange).toBeCalledWith([
+    {
+      key: '3',
+      duration: 100,
+    },
+  ]);
+});

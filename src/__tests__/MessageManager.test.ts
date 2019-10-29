@@ -10,7 +10,6 @@ afterEach(() => {
 });
 
 afterEach(reset);
-afterEach(require('../settings').reset);
 
 jest.useFakeTimers();
 

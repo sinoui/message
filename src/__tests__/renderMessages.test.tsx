@@ -1,6 +1,6 @@
-import { unmountComponentAtNode } from 'react-dom';
 import renderMessages, { id } from '../renderMessages';
 import '@testing-library/jest-dom/extend-expect';
+import { MessageType } from '../types';
 
 afterEach(() => {
   const rootElement = document.getElementById(id);
@@ -8,21 +8,58 @@ afterEach(() => {
     return;
   }
 
-  unmountComponentAtNode(rootElement);
-  rootElement.remove();
+  document.body.removeChild(rootElement);
 });
 
+const messages = [
+  {
+    key: '1',
+    content: '消息1',
+    duration: 300,
+    type: MessageType.loading,
+  },
+  {
+    key: '2',
+    content: '消息2',
+    duration: 300,
+    type: MessageType.success,
+  },
+  {
+    key: '3',
+    content: '消息3',
+    duration: 300,
+    type: MessageType.warning,
+  },
+  {
+    key: '4',
+    content: '消息4',
+    duration: 300,
+    type: MessageType.info,
+  },
+  {
+    key: '5',
+    content: '消息5',
+    duration: 300,
+    type: MessageType.error,
+  },
+];
+
 it('渲染列表', () => {
-  renderMessages([
-    {
-      key: '1',
-      content: '消息',
-      duration: 300,
-      type: 'info',
-    },
-  ]);
+  renderMessages(messages);
 
   const container = document.querySelector('#sinoui-global-message');
 
-  expect(container).toHaveTextContent('消息');
+  expect(container).toHaveTextContent('消息1');
+  expect(container).toHaveTextContent('消息2');
+  expect(container).toHaveTextContent('消息3');
+  expect(container).toHaveTextContent('消息4');
+  expect(container).toHaveTextContent('消息5');
+
+  renderMessages([]);
+
+  expect(container).not.toHaveTextContent('消息1');
+  expect(container).not.toHaveTextContent('消息2');
+  expect(container).not.toHaveTextContent('消息3');
+  expect(container).not.toHaveTextContent('消息4');
+  expect(container).not.toHaveTextContent('消息5');
 });

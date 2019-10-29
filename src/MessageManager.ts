@@ -6,7 +6,6 @@ import {
   MessageConfig,
   MessageType,
 } from './types';
-import settings, { config } from './settings';
 import renderMessages from './renderMessages';
 import uuid from './helpers/uuid';
 
@@ -15,17 +14,34 @@ function isNumber(test: any): test is number {
   return typeof test === 'number';
 }
 
+/**
+ * 消息管理器
+ */
 class MessageManager {
+  /**
+   * 消息列表
+   */
   private messages: StatefulMessageArray<MessageInterface>;
+
+  /**
+   * 全局设置
+   */
+  private settings = {
+    max: 10,
+    duration: 3000,
+  };
 
   public constructor() {
     this.messages = new StatefulMessageArray(
-      settings.max,
+      this.settings.max,
       this.handleMessageUpdate.bind(this),
     );
   }
 
-  public handleMessageUpdate() {
+  /**
+   * 处理消息更新事件
+   */
+  private handleMessageUpdate() {
     renderMessages(this.messages.messages);
   }
 
@@ -35,8 +51,8 @@ class MessageManager {
    * @param {Settings} newSettings 新的配置
    */
   public config(newSettings: Settings) {
-    config(newSettings);
-    this.messages.setMax(settings.max);
+    Object.assign(this.settings, newSettings);
+    this.messages.setMax(this.settings.max);
   }
 
   /**
@@ -50,7 +66,7 @@ class MessageManager {
      */
     const fn = (
       content: React.ReactNode,
-      duration: number | MessageConfig = settings.duration,
+      duration: number | MessageConfig = this.settings.duration,
     ) => {
       const messageConfig = isNumber(duration) ? { duration } : duration;
       const key = messageConfig.key || uuid();
@@ -61,7 +77,7 @@ class MessageManager {
         content,
         duration: isNumber(messageConfig.duration)
           ? messageConfig.duration
-          : settings.duration,
+          : this.settings.duration,
       };
 
       return this.messages.add(message);
@@ -73,27 +89,27 @@ class MessageManager {
   /**
    * 展示 info 级别的消息
    */
-  public info = this.showMessage('info');
+  public info = this.showMessage(MessageType.info);
 
   /**
    * 展示 error 级别的消息
    */
-  public error = this.showMessage('error');
+  public error = this.showMessage(MessageType.error);
 
   /**
    * 展示 warning 级别的消息
    */
-  public warning = this.showMessage('warning');
+  public warning = this.showMessage(MessageType.warning);
 
   /**
    * 展示 success 级别的消息
    */
-  public success = this.showMessage('success');
+  public success = this.showMessage(MessageType.success);
 
   /**
    * 展示 loading 级别的消息
    */
-  public loading = this.showMessage('loading');
+  public loading = this.showMessage(MessageType.loading);
 }
 
 export default MessageManager;

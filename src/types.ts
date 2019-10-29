@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /**
  * 消息配置
  */
@@ -26,7 +27,13 @@ export interface Settings {
   max?: number;
 }
 
-export type MessageType = 'info' | 'loading' | 'warning' | 'success' | 'error';
+export enum MessageType {
+  info = 'info',
+  success = 'success',
+  error = 'error',
+  loading = 'loading',
+  warning = 'warning',
+}
 
 /**
  * 消息接口
