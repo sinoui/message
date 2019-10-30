@@ -41,4 +41,4 @@ function MessageIcon({ type }: { type: MessageType }) {
   );
 }
 
-export default React.memo(MessageIcon);
+export default MessageIcon;
