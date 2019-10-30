@@ -8,6 +8,9 @@ import { MessageType } from '../types';
 const DenseIcon = styled(Icon)`
   font-size: 16px;
   margin-right: 8px;
+  display: inline-flex;
+  height: 20px;
+  align-items: center;
 `;
 
 const DenseProgress = styled(Progress)`

@@ -1,4 +1,6 @@
 import React from 'react';
+import Slide from 'sinoui-components/transitions/Slide';
+import { TransitionGroup } from 'react-transition-group';
 import { MessageInterface } from '../types';
 import MessageListWrapper from './MessageListWrapper';
 import Message from './Message';
@@ -6,14 +8,16 @@ import MessageIcon from './MessageIcon';
 
 function MessageList({ messages }: { messages: MessageInterface[] }) {
   return (
-    <MessageListWrapper>
+    <TransitionGroup component={MessageListWrapper}>
       {messages.map((message) => (
-        <Message key={message.key}>
-          <MessageIcon type={message.type} />
-          <div>{message.content}</div>
-        </Message>
+        <Slide key={message.key} appear timeout={300} in direction="down">
+          <Message>
+            <MessageIcon type={message.type} />
+            <div>{message.content}</div>
+          </Message>
+        </Slide>
       ))}
-    </MessageListWrapper>
+    </TransitionGroup>
   );
 }
 
