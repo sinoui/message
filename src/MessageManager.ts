@@ -69,6 +69,7 @@ class MessageManager {
    */
   public setTheme(theme: Theme) {
     this.theme = theme;
+    this.handleMessageUpdate();
   }
 
   /**

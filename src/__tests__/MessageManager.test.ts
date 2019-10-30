@@ -1,4 +1,9 @@
-import { defaultTheme } from '@sinoui/theme';
+import {
+  defaultTheme,
+  createPalette,
+  colors,
+  createTheme,
+} from '@sinoui/theme';
 import MessageManager from '../MessageManager';
 import renderMessages from '../renderMessages';
 import { reset } from '../helpers/uuid';
@@ -107,4 +112,18 @@ it('替换消息', () => {
     ],
     defaultTheme,
   );
+});
+
+it('设置主题', () => {
+  const messageManager = new MessageManager();
+
+  messageManager.loading('消息1', 0);
+
+  expect(renderMessages).toHaveBeenCalledTimes(1);
+
+  const palette = createPalette({ primary: colors.amber });
+
+  messageManager.setTheme(createTheme({ palette }));
+
+  expect(renderMessages).toHaveBeenCalledTimes(2);
 });
