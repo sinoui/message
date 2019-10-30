@@ -1,4 +1,5 @@
 /* eslint-disable no-dupe-class-members */
+import { Theme, defaultTheme } from '@sinoui/theme';
 import StatefulMessageArray from './StatefulMessageArray';
 import {
   MessageInterface,
@@ -31,18 +32,25 @@ class MessageManager {
     duration: 3000,
   };
 
+  /**
+   * 主题
+   */
+  private theme: Theme;
+
   public constructor() {
     this.messages = new StatefulMessageArray(
       this.settings.max,
       this.handleMessageUpdate.bind(this),
     );
+
+    this.theme = defaultTheme;
   }
 
   /**
    * 处理消息更新事件
    */
   private handleMessageUpdate() {
-    renderMessages(this.messages.messages);
+    renderMessages(this.messages.messages, this.theme);
   }
 
   /**
@@ -53,6 +61,14 @@ class MessageManager {
   public config(newSettings: Settings) {
     Object.assign(this.settings, newSettings);
     this.messages.setMax(this.settings.max);
+  }
+
+  /**
+   * 设置主题
+   * @param theme 主题
+   */
+  public setTheme(theme: Theme) {
+    this.theme = theme;
   }
 
   /**

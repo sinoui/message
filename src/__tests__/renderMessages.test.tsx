@@ -1,6 +1,9 @@
+import { defaultTheme } from '@sinoui/theme';
 import renderMessages, { id } from '../renderMessages';
 import '@testing-library/jest-dom/extend-expect';
 import { MessageType } from '../types';
+
+jest.useFakeTimers();
 
 afterEach(() => {
   const rootElement = document.getElementById(id);
@@ -12,12 +15,6 @@ afterEach(() => {
 });
 
 const messages = [
-  {
-    key: '1',
-    content: '消息1',
-    duration: 300,
-    type: MessageType.loading,
-  },
   {
     key: '2',
     content: '消息2',
@@ -45,19 +42,18 @@ const messages = [
 ];
 
 it('渲染列表', () => {
-  renderMessages(messages);
+  renderMessages(messages, defaultTheme);
 
   const container = document.querySelector('#sinoui-global-message');
 
-  expect(container).toHaveTextContent('消息1');
   expect(container).toHaveTextContent('消息2');
   expect(container).toHaveTextContent('消息3');
   expect(container).toHaveTextContent('消息4');
   expect(container).toHaveTextContent('消息5');
 
-  renderMessages([]);
+  renderMessages([], defaultTheme);
+  jest.runAllTimers();
 
-  expect(container).not.toHaveTextContent('消息1');
   expect(container).not.toHaveTextContent('消息2');
   expect(container).not.toHaveTextContent('消息3');
   expect(container).not.toHaveTextContent('消息4');

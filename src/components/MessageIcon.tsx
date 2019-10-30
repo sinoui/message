@@ -35,7 +35,9 @@ function MessageIcon({ type }: { type: MessageType }) {
   return type === MessageType.loading ? (
     <DenseProgress size={16} thickness={1.5} />
   ) : (
-    <DenseIcon color={type}>{renderIcon(type)}</DenseIcon>
+    <DenseIcon color={type === MessageType.info ? 'primary' : type}>
+      {renderIcon(type)}
+    </DenseIcon>
   );
 }
 

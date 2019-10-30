@@ -6,6 +6,7 @@ route: /
 import message from '../src';
 import { Playground } from 'docz';
 import Button from 'sinoui-components/Button';
+import ThemeButtons from './ThemeButtons';
 
 # @sinoui/message
 
@@ -73,6 +74,27 @@ function Demo() {
         <Button onClick={error}>error</Button>
         <Button onClick={success}>success</Button>
       </div>
+    )
+
+}}
+
+</Playground>
+
+## 主题切换
+
+使用`message.setTheme(theme)`的方式切换主题。
+
+<Playground>
+  {()=>{
+    const handleClick = ()=>{
+      message.info('这是一条普通的提示消息')
+    }
+
+    return (
+      <>
+        <ThemeButtons />
+        <Button onClick={handleClick}>显示消息</Button>
+      </>
     )
 
 }}
