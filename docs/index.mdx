@@ -3,50 +3,77 @@ name: 开始
 route: /
 ---
 
-# 开始使用
-
-在这里写项目使用文档。
-
 import message from '../src';
 import { Playground } from 'docz';
 import Button from 'sinoui-components/Button';
 
+# @sinoui/message
+
+全局提示信息。
+
+## 依赖安装
+
+```shell
+yarn add @sinoui/message
+```
+
+## 入门示例
+
+```tsx
+import React from 'react';
+import message from '@sinoui/theme';
+
+function Demo() {
+  const handleClick = () => {
+    message.info('这是一条提示消息');
+  };
+
+  return <Button onClick={handleClick}>显示消息</Button>;
+}
+```
+
 <Playground>
   {() => {
     const handleClick = () => {
-       message.info('消息1', 0);
+      message.info('这是一条提示消息');
     };
-
-    return <button onClick={handleClick}>显示消息</button>;
-
-}}
-
+    return <Button onClick={handleClick}>显示消息</Button>;
+  }}
 </Playground>
+
+## 不同类型的消息提示
 
 <Playground>
   {() => {
     const success = () => {
-      message.success('保存表单成功');
+      message.success('保存成功');
     };
     
     const error = () => {
-        message.error('提交失败');
+        message.error('保存失败');
     };
     
     const warning =  () => {
-        message.warning('表单错误');
+        message.warning('表单字段填写不完整');
     };
     
     const info =  () => {
-        message.info('信息提示');
+        message.info('请确认提交信息');
     }
 
-    return <div style={{display:'flex'}}>
-        <Button onClick={success}>success</Button>
+    const loading =()=>{
+      message.loading('数据正在加载中...')
+    }
+
+    return (
+      <div style={{display: 'flex'}}>
+        <Button onClick={loading}>loading</Button>
         <Button onClick={info}>info</Button>
-        <Button onClick={error}>error</Button>
         <Button onClick={warning}>warning</Button>
-    </div>
+        <Button onClick={error}>error</Button>
+        <Button onClick={success}>success</Button>
+      </div>
+    )
 
 }}
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import Icon from 'sinoui-components/Icon';
-import { MdInfo, MdCancel, MdCheckCircle, MdError } from 'react-icons/md';
+import { MdInfo, MdWarning, MdCheckCircle, MdError } from 'react-icons/md';
 import styled from 'styled-components';
+import Progress from 'sinoui-components/Progress';
 import { MessageType } from '../types';
 
 const DenseIcon = styled(Icon)`
@@ -9,21 +10,30 @@ const DenseIcon = styled(Icon)`
   margin-right: 8px;
 `;
 
+const DenseProgress = styled(Progress)`
+  margin-right: 8px;
+  margin-top: 3px;
+`;
+
 const renderIcon = (type: MessageType) => {
   switch (type) {
     case MessageType.success:
       return <MdCheckCircle />;
     case MessageType.error:
-      return <MdCancel />;
-    case MessageType.warning:
       return <MdError />;
+    case MessageType.warning:
+      return <MdWarning />;
     default:
       return <MdInfo />;
   }
 };
 
 function MessageIcon({ type }: { type: MessageType }) {
-  return <DenseIcon color={type}>{renderIcon(type)}</DenseIcon>;
+  return type === MessageType.loading ? (
+    <DenseProgress size={16} thickness={1.5} />
+  ) : (
+    <DenseIcon color={type}>{renderIcon(type)}</DenseIcon>
+  );
 }
 
 export default React.memo(MessageIcon);
