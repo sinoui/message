@@ -53,4 +53,16 @@ describe('MessageIcon 镜像测试', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('loading类型', () => {
+    const tree = renderer
+      .create(
+        <TestWrapper>
+          <MessageIcon type={MessageType.loading} />
+        </TestWrapper>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

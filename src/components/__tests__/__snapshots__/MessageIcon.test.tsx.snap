@@ -124,6 +124,32 @@ exports[`MessageIcon 镜像测试 info类型 1`] = `
 </span>
 `;
 
+exports[`MessageIcon 镜像测试 loading类型 1`] = `
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  -webkit-animation: kOBPdp 1.7s linear infinite;
+  animation: kOBPdp 1.7s linear infinite;
+}
+
+.c1 {
+  margin-right: 8px;
+  margin-top: 3px;
+}
+
+<div
+  className="c0 sinoui-progress c1"
+  color="primary"
+  size={16}
+>
+  <canvas />
+</div>
+`;
+
 exports[`MessageIcon 镜像测试 success类型 1`] = `
 .c0 {
   font-family: 'Material Icons';

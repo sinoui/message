@@ -57,7 +57,7 @@
     "@sinoui/theme": "^0.3.3",
     "react-icons": "^3.8.0",
     "react-transition-group": "^4.3.0",
-    "sinoui-components": "^0.2.5",
+    "sinoui-components": "^0.2.6-alpha.1",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {

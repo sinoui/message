@@ -10815,10 +10815,10 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-sinoui-components@^0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/sinoui-components/-/sinoui-components-0.2.5.tgz#728ee62ad78348bbe3ff51747013c3452bab4bc8"
-  integrity sha512-SBvahe4jS3tDt2BRTCAzO2x+jMhadrK9x7wyxiXMLSVU5WnxcZBXzztqEFZdjWUTseMEy/EDArUnkpAtKQEBIw==
+sinoui-components@^0.2.6-alpha.1:
+  version "0.2.6-alpha.1"
+  resolved "https://registry.yarnpkg.com/sinoui-components/-/sinoui-components-0.2.6-alpha.1.tgz#d13e88ce9059880119e2ae85cfbf10c11420e1e8"
+  integrity sha512-UBS0nVZzs8WTcImtFi1iVdLDrX7cma/OcCRPcznYgoKaPvdt4NRngKusblvKp1NaWyUmU9vitkZYfIwAIHWbTA==
   dependencies:
     "@sinoui/ripple" "^1.0.2"
     "@sinoui/theme" "^0.3.3"
