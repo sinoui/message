@@ -1,6 +1,33 @@
 # @sinoui/message
 
-这是由[ts-lib-scripts](https://github.com/sinoui/ts-lib-scripts)创建的TypeScript库项目。
+[![npm version](https://img.shields.io/npm/v/@sinoui/message)](https://www.npmjs.com/package/@sinoui/message)
+[![downloads](https://img.shields.io/npm/dm/@sinoui/message)](https://www.npmjs.com/package/@sinoui/message)
+
+全局提示消息条。[官方文档](https://sinoui.github.io/message/)
+
+## 安装
+
+```shell
+yarn add @sinoui/message
+```
+
+## 简单示例
+
+```tsx
+import React from 'react';
+import message from '@sinoui/theme';
+import Button from 'sinoui-components/Button';
+
+function Demo() {
+  const handleClick = () => {
+    message.info('这是一条提示消息');
+  };
+
+  return <Button onClick={handleClick}>显示消息</Button>;
+}
+```
+
+更多示例请参考[官方文档](https://sinoui.github.io/message/)。
 
 ## 本地开发
 
@@ -39,20 +66,10 @@ yarn doc:dev
 ### 编译并打包文档
 
 ```shell
-yarn doc:publish
+yarn doc:build
 ```
 
 ### 发布文档
-
-在发布文档之前，在`package.json`中配置好`homepage`，如下所示：
-
-```json
-{
-  "homepage": "https://sinouiincubator.github.io/editable-data-table"
-}
-```
-
-配置完之后就可以执行下面的命令行发布文档：
 
 ```shell
 yarn doc:publish
