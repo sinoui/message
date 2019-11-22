@@ -1,10 +1,10 @@
 {
   "vendors.js": "/message/static/js/vendors.535d8f53.js",
-  "vendors.js.map": "/message/static/js/vendors.6f2f9abb6b8dc37f8210.js.map",
-  "app.js": "/message/static/js/app.6f2f9abb6b8dc37f8210.js",
-  "app.js.map": "/message/static/js/app.6f2f9abb6b8dc37f8210.js.map",
-  "docs-index.js": "/message/static/js/docs-index.8680c188.js",
-  "docs-index.js.map": "/message/static/js/docs-index.6f2f9abb6b8dc37f8210.js.map",
+  "vendors.js.map": "/message/static/js/vendors.254c3bbc5b26e7d24b05.js.map",
+  "app.js": "/message/static/js/app.254c3bbc5b26e7d24b05.js",
+  "app.js.map": "/message/static/js/app.254c3bbc5b26e7d24b05.js.map",
+  "docs-index.js": "/message/static/js/docs-index.c4a65df5.js",
+  "docs-index.js.map": "/message/static/js/docs-index.254c3bbc5b26e7d24b05.js.map",
   "404.html": "/message/404.html",
   "index.html": "/message/index.html"
 }
