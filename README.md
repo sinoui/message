@@ -15,7 +15,7 @@ yarn add @sinoui/message
 
 ```tsx
 import React from 'react';
-import message from '@sinoui/theme';
+import message from '@sinoui/message';
 import Button from 'sinoui-components/Button';
 
 function Demo() {
