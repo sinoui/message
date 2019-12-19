@@ -14,7 +14,7 @@ function getOrCreateRootElement() {
     if (!rootElement) {
       rootElement = document.createElement('div');
       rootElement.setAttribute('id', id);
-      document.body.append(rootElement);
+      document.body.appendChild(rootElement);
     }
   }
   return rootElement;

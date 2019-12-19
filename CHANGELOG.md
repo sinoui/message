@@ -1,5 +1,9 @@
 # @sinoui/message 版本变更记录
 
+## v1.0.1 - 2019.12.19
+
+- fix: 修复无法在 IE 中使用的缺陷
+
 ## v1.0.0 - 2019.10.31
 
 @sinoui/message 基础实现。 :tada: :tada::tada:
