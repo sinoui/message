@@ -1,5 +1,11 @@
 # @sinoui/message 版本变更记录
 
+## v1.0.2 - 2020.4.26
+
+- fix: 升级 @sinoui/theme
+- fix: sinoui-components 库调整为引用 @sinoui/core
+- fix: react-icons 库调整为引用 @sinoui/icons
+
 ## v1.0.1 - 2019.12.19
 
 - fix: 修复无法在 IE 中使用的缺陷

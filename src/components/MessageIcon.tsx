@@ -1,43 +1,47 @@
 import React from 'react';
-import Icon from 'sinoui-components/Icon';
-import { MdInfo, MdWarning, MdCheckCircle, MdError } from 'react-icons/md';
+import Info from '@sinoui/icons/Info';
+import Warning from '@sinoui/icons/Warning';
+import CheckCircle from '@sinoui/icons/CheckCircle';
+import Error from '@sinoui/icons/Error';
 import styled from 'styled-components';
-import Progress from 'sinoui-components/Progress';
+import Progress from '@sinoui/core/Progress';
 import { MessageType } from '../types';
 
-const DenseIcon = styled(Icon)`
-  font-size: 16px;
-  margin-right: 8px;
-  display: inline-flex;
-  height: 20px;
-  align-items: center;
-`;
+const denseIconStyle = {
+  fontSize: '16px',
+  marginRight: '8px',
+  display: 'inline-flex',
+  height: '20px',
+  alignItems: 'center',
+};
 
 const DenseProgress = styled(Progress)`
   margin-right: 8px;
   margin-top: 3px;
 `;
 
-const renderIcon = (type: MessageType) => {
+const getIcon = (type: MessageType) => {
   switch (type) {
     case MessageType.success:
-      return <MdCheckCircle />;
+      return CheckCircle;
     case MessageType.error:
-      return <MdError />;
+      return Error;
     case MessageType.warning:
-      return <MdWarning />;
+      return Warning;
     default:
-      return <MdInfo />;
+      return Info;
   }
 };
 
 function MessageIcon({ type }: { type: MessageType }) {
+  const Icon: React.ReactType = getIcon(type);
   return type === MessageType.loading ? (
     <DenseProgress size={16} thickness={1.5} />
   ) : (
-    <DenseIcon color={type === MessageType.info ? 'primary' : type}>
-      {renderIcon(type)}
-    </DenseIcon>
+    <Icon
+      color={type === MessageType.info ? 'primary' : type}
+      style={denseIconStyle}
+    />
   );
 }
 

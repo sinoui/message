@@ -5,7 +5,7 @@ route: /
 
 import message from '../src';
 import { Playground } from 'docz';
-import Button from 'sinoui-components/Button';
+import Button from '@sinoui/core/Button';
 import ThemeButtons from './ThemeButtons';
 
 # @sinoui/message
@@ -52,23 +52,18 @@ function Demo() {
     const success = () => {
       message.success('保存成功');
     };
-    
     const error = () => {
         message.error('保存失败');
-    };
-    
+    };    
     const warning =  () => {
         message.warning('表单字段填写不完整');
-    };
-    
+    };   
     const info =  () => {
         message.info('请确认提交信息');
     }
-
     const loading =()=>{
       message.loading('数据正在加载中...')
     }
-
     return (
       <div style={{display: 'flex'}}>
         <Button onClick={loading}>loading</Button>
@@ -77,10 +72,8 @@ function Demo() {
         <Button onClick={error}>error</Button>
         <Button onClick={success}>success</Button>
       </div>
-    )
-
-}}
-
+    );
+  }}
 </Playground>
 
 ## 长时间显示 loading 提示
@@ -119,7 +112,6 @@ function Demo() {
 
 <Playground>
   {()=>{
-
     function save() {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -127,7 +119,6 @@ function Demo() {
         }, 1000)
       })
     }
-
     const handleClick = () => {
       const hide=message.loading('数据正在提交，请稍后...',0);
       save().then(()=>{
@@ -138,11 +129,8 @@ function Demo() {
         message.error('保存失败');
       });
     }
-
     return <Button onClick={handleClick}>保存</Button>
-
-}}
-
+  }}
 </Playground>
 
 ## 设置消息显示时长
@@ -151,19 +139,15 @@ function Demo() {
 
 <Playground>
   {() => {
-
     const loading =()=>{
       message.loading('数据正在加载中...')
     }
-
     const loading1=()=>{
       message.loading('数据加载中，1s后消失...',1000)
     }
-
     const loading2=()=>{
       message.loading('数据加载中，10s后消失...',{duration:10000})
     }
-
     return (
       <div style={{display: 'flex'}}>
         <Button onClick={loading}>默认时长</Button>
@@ -171,9 +155,7 @@ function Demo() {
         <Button onClick={loading2}>10s</Button>
       </div>
     )
-
-}}
-
+  }}
 </Playground>
 
 ## 设置消息显示最大条数
@@ -223,7 +205,6 @@ function Demo() {
 
 <Playground>
   {()=>{
-
     function save() {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -231,7 +212,6 @@ function Demo() {
         }, 1000)
       })
     }
-
     const handleClick = () => {
       message.loading('数据正在提交，请稍后...', {key:'001',duration:0});
       save().then(()=>{
@@ -241,9 +221,7 @@ function Demo() {
       });
     }
     return <Button onClick={handleClick}>保存</Button>
-
-}}
-
+  }}
 </Playground>
 
 ## 主题切换
@@ -255,16 +233,13 @@ function Demo() {
     const handleClick = ()=>{
       message.info('这是一条普通的提示消息')
     }
-
     return (
       <>
         <ThemeButtons />
         <Button onClick={handleClick}>显示消息</Button>
       </>
-    )
-
-}}
-
+    );
+  }}
 </Playground>
 
 ## API

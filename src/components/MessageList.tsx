@@ -1,5 +1,5 @@
 import React from 'react';
-import Slide from 'sinoui-components/transitions/Slide';
+import Slide from '@sinoui/core/transitions/Slide';
 import { TransitionGroup } from 'react-transition-group';
 import { MessageInterface } from '../types';
 import MessageListWrapper from './MessageListWrapper';
