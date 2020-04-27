@@ -1,6 +1,6 @@
 {
   "name": "@sinoui/message",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "全局提示消息条。",
   "license": "MIT",
   "main": "dist/index.js",
