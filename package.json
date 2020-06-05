@@ -54,7 +54,8 @@
   },
   "peerDependencies": {
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react-dom": ">=16.8.0",
+    "styled-components": ">=4.0.0"
   },
   "files": [
     "dist",
@@ -63,7 +64,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "@babel/runtime": "^7.6.3",
-    "@sinoui/core": "^1.0.0-beta.9",
+    "@sinoui/core": "^1.0.0-beta.37",
     "@sinoui/icons": "^1.0.0-beta.2",
     "@sinoui/theme": "^1.0.0-beta.8",
     "react-icons": "^3.8.0",
@@ -82,7 +83,7 @@
     "docz": "^2.3.1",
     "gh-pages": "^2.1.1",
     "husky": "^3.0.9",
-    "jest-styled-components": "^6.3.3",
+    "jest-styled-components": "^7.0.2",
     "lint-staged": "^9.4.2",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",

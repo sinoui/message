@@ -1,5 +1,9 @@
 # @sinoui/message 版本变更记录
 
+## v2.0.0 - 2020.6.5
+
+- fix: 修复使用新版本的 Slide 之后消息被遮住的缺陷
+
 ## v2.0.0 - 2020.4.27
 
 - fix: 升级 @sinoui/theme

@@ -6,7 +6,6 @@ const MessageListWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 8px;
-  margin-top: -40px;
   top: 16px;
   right: 0;
   left: 0;
