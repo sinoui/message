@@ -1,6 +1,6 @@
 {
   "name": "@sinoui/message",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "全局提示消息条。",
   "license": "MIT",
   "main": "dist/index.js",
@@ -64,9 +64,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "@babel/runtime": "^7.6.3",
-    "@sinoui/core": "^1.0.0-beta.37",
-    "@sinoui/icons": "^1.0.0-beta.2",
-    "@sinoui/theme": "^1.0.0-beta.8",
+    "@sinoui/core": "^1.0.1",
+    "@sinoui/icons": "^1.0.0",
+    "@sinoui/theme": "^1.0.0",
     "react-icons": "^3.8.0",
     "react-transition-group": "^4.3.0"
   },
