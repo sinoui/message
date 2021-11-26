@@ -1,5 +1,9 @@
 # @sinoui/message 版本变更记录
 
+## v2.1.0 - 2021.11.26
+
+- feat: 导出 MessageManager
+
 ## v2.0.1 - 2020.6.5
 
 - fix: 修复使用新版本的 Slide 之后消息被遮住的缺陷
